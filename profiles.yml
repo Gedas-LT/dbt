@@ -1,0 +1,19 @@
+dae:
+  target: "{{ env_var('DBT_TARGET', 'dev') }}"
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      database: gedas-analytics-dev
+      schema: dbt
+      location: "{{ env_var('DBT_BQ_LOCATION') }}"
+      threads: 4
+      keyfile: "{{ env_var('DBT_KEYFILE') }}"
+    prod:
+      type: bigquery
+      method: service-account
+      database: gedas-analytics-prod
+      schema: dbt
+      location: "{{ env_var('DBT_BQ_LOCATION') }}"
+      threads: 4
+      keyfile: "{{ env_var('DBT_KEYFILE') }}"

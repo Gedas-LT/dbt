@@ -1,0 +1,6 @@
+.git
+.env
+credentials
+target
+dbt_packages
+logs

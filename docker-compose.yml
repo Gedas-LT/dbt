@@ -1,0 +1,17 @@
+services:
+  dbt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: dae-dbt:local
+    env_file:
+      - .env
+    environment:
+      DBT_PROFILES_DIR: /usr/app
+      DBT_TARGET: ${DBT_TARGET:-dev}
+      DBT_BQ_LOCATION: ${DBT_BQ_LOCATION}
+      DBT_KEYFILE: /usr/app/credentials/${GCP_SA_FILENAME:-gc-gedas-analytics-dev-sa.json}
+    volumes:
+      - .:/usr/app
+      - ./credentials:/usr/app/credentials:ro
+    working_dir: /usr/app
