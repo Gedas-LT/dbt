@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: google_sheets
+    schema: external__google_sheets
+    tables:
+      - name: stocks_cost_basis
+        description: The cost basis of the stocks
+        data_tests:
+          - dbt_utils.unique_combination_of_columns:
+              arguments:
+                combination_of_columns:
+                  - ticker
+                  - company_name
+        columns:
+          - name: ticker
+            data_type: string
+            description: The ticker symbol of the stock
+            data_tests:
+              - unique
+          - name: currency
+            data_type: string
+            description: The currency of the stock
+          - name: quantity
+            data_type: number
+            description: The quantity of the stock
+          - name: cost_basis
+            data_type: number
+            description: The cost basis of the stock
+          - name: company_name
+            data_type: string
+            description: The name of the company

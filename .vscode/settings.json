@@ -1,0 +1,16 @@
+{
+  "dbt.dbtIntegration": "fusion",
+  "dbt.dbtPythonPathOverride": "${workspaceFolder}/.venv/Scripts/python.exe",
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+  "python.envFile": "${workspaceFolder}/.env",
+  "files.associations": {
+    "*.sql": "jinja-sql",
+    "*.yml": "jinja-yaml"
+  },
+  "terminal.integrated.env.windows": {
+    "DBT_TARGET": "dev",
+    "DBT_BQ_LOCATION": "europe-central2",
+    "DBT_PROFILES_DIR": "${workspaceFolder}",
+    "DBT_KEYFILE": "${workspaceFolder}/credentials/gc-gedas-analytics-dev-sa.json"
+  }
+}

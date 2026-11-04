@@ -1,4 +1,5 @@
 .env
+.venv/
 credentials/
 target/
 dbt_packages/

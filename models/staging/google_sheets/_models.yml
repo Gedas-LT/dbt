@@ -1,0 +1,18 @@
+models:
+    - name: stg_google_sheets__stocks_cost_basis
+      columns:
+        - name: ticker
+          data_type: string
+          description: The ticker symbol of the stock
+        - name: currency
+          data_type: string
+          description: The currency of the stock
+        - name: quantity
+          data_type: number
+          description: The quantity of the stock
+        - name: cost_basis
+          data_type: number
+          description: The cost basis of the stock
+        - name: company_name
+          data_type: string
+          description: The name of the company
